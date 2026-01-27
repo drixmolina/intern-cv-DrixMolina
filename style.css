@@ -8,7 +8,7 @@ html {
     --bg-secondary: white;
     --text-primary: #333;
     --text-secondary: #555;
-    --header-bg: #0047ab;
+    --header-bg: #000000;
     --header-text: white;
     --border-color: #ddd;
     --accent-color: #0066ff;
@@ -61,7 +61,7 @@ header h1 {
 header p {
     margin: 0;
     font-size: 1.2em;
-    color: var(--text-secondary);
+    color: #87ceeb;
 }
 
 /* Theme Toggle Button */
@@ -88,8 +88,9 @@ nav {
     border-bottom: 1px solid var(--border-color);
     margin-bottom: 30px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    gap: 15px;
 }
 
 nav ul {
@@ -97,6 +98,9 @@ nav ul {
     padding: 0;
     margin: 0;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 nav ul li {
