@@ -95,12 +95,16 @@ header p {
 .theme-toggle-container {
     display: flex;
     align-items: center;
-    gap: 10px;
-    background-color: transparent;
-    padding: 0px;
+    gap: 12px;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 8px 12px;
     border-radius: 50px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle-container:hover {
+    background-color: rgba(0, 0, 0, 0.15);
 }
 
 /* Theme Icons */
@@ -138,7 +142,6 @@ html:not([data-theme="dark"]) .moon-icon {
     opacity: 0.4;
 }
 
-/* Theme Toggle Button */
 .theme-toggle-btn {
     width: 50px;
     height: 26px;
@@ -185,15 +188,15 @@ html[data-theme="dark"] .theme-toggle-btn::after {
 /* Navigation Styling */
 nav {
     background-color: var(--bg-secondary);
-    padding: 15px 20px;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 0px;
+    padding: 20px 20px;
+    border-bottom: 2px solid var(--accent-color);
+    margin-bottom: 30px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     padding-right: 40px;
-    box-shadow: none;
-    gap: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    gap: 30px;
 }
 
 nav ul {
@@ -213,17 +216,17 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    background-color: transparent;
-    color: var(--text-primary);
-    padding: 8px 16px;
-    border-radius: 0px;
-    transition: all 0.2s ease;
-    font-weight: 500;
-    box-shadow: none;
-    letter-spacing: 0px;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 102, 255, 0.4);
+    letter-spacing: 0.5px;
     position: relative;
     overflow: hidden;
-    border: 1px solid var(--border-color);
+    border: 2px solid transparent;
 }
 
 nav ul li a::before {
@@ -234,17 +237,21 @@ nav ul li a::before {
     width: 0;
     height: 0;
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.5);
     transform: translate(-50%, -50%);
-    transition: width 0.4s, height 0.4s;
+    transition: width 0.6s, height 0.6s;
 }
 
 nav ul li a:hover {
-    background-color: var(--accent-color);
-    color: white;
-    transform: none;
-    box-shadow: none;
-    border-color: var(--accent-color);
+    background-color: #0052cc;
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 0 8px 24px rgba(0, 102, 255, 0.6);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+nav ul li a:hover::before {
+    width: 300px;
+    height: 300px;
 }
 
 /* Section Styling */
