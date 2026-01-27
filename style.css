@@ -10,12 +10,12 @@ html {
     --text-secondary: #640d5f;
     --header-bg: #0d1164;
     --header-text: #FFF9F0;
-    --border-color: #ea2264;
-    --accent-color: #f78d60;
-    --accent-hover: #ea2264;
-    --accent-light: #ea226420;
+    --border-color: #0066ff;
+    --accent-color: #0066ff;
+    --accent-hover: #0052cc;
+    --accent-light: #0066ff20;
     --success-color: #640d5f;
-    --warning-color: #f78d60;
+    --warning-color: #0066ff;
     transition: background-color 0.3s ease, color 0.3s ease;
     scroll-behavior: smooth;
 }
@@ -59,10 +59,10 @@ main {
 
 /* Header Styling */
 header {
-    background: linear-gradient(135deg, #0d1164 0%, #640d5f 50%, #ea2264 100%);
+    background: linear-gradient(135deg, #0d1164 0%, #640d5f 50%, #0066ff 100%);
     color: var(--header-text);
     padding: 50px 20px;
-    border-bottom: 5px solid #f78d60;
+    border-bottom: 5px solid #0066ff;
     text-align: center;
     box-shadow: 0 8px 32px rgba(13, 17, 100, 0.4);
     position: relative;
@@ -76,7 +76,7 @@ header::after {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at top right, rgba(247, 141, 96, 0.2), transparent);
+    background: radial-gradient(circle at top right, rgba(0, 102, 255, 0.2), transparent);
     pointer-events: none;
 }
 
@@ -102,7 +102,7 @@ header h1 {
 header p {
     margin: 0;
     font-size: 1.2em;
-    color: #f78d60;
+    color: #0066ff;
     animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
@@ -328,12 +328,12 @@ article p {
 
 /* Footer Styling */
 footer {
-    background: linear-gradient(135deg, #0d1164 0%, #640d5f 50%, #ea2264 100%);
-    color: #f8f6fc;
+    background: linear-gradient(135deg, #0d1164 0%, #640d5f 50%, #0066ff 100%);
+    color: #FFF9F0;
     text-align: center;
     padding: 40px 20px;
     margin-top: 50px;
-    border-top: 5px solid #f78d60;
+    border-top: 5px solid #0066ff;
     box-shadow: 0 -8px 32px rgba(13, 17, 100, 0.3);
 }
 
