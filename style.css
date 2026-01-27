@@ -4,32 +4,34 @@
 }
 
 html {
-    --bg-primary: #ffffff;
+    --bg-primary: #f5f3f0;
     --bg-secondary: #ffffff;
-    --text-primary: #333333;
-    --text-secondary: #666666;
-    --header-bg: #000000;
+    --text-primary: #2c3e50;
+    --text-secondary: #5a6c7d;
+    --header-bg: #1a3a52;
     --header-text: #ffffff;
-    --border-color: #000000;
-    --accent-color: #000000;
-    --accent-hover: #333333;
-    --accent-light: #00000010;
-    --success-color: #333333;
-    --warning-color: #000000;
+    --border-color: #2c3e50;
+    --accent-color: #1a3a52;
+    --accent-hover: #0d1f2d;
+    --accent-light: #1a3a5210;
+    --success-color: #2c3e50;
+    --warning-color: #1a3a52;
+    --gold: #d4af37;
+    --gold-light: #e8c547;
     transition: background-color 0.2s ease, color 0.2s ease;
     scroll-behavior: smooth;
 }
 
 html[data-theme="dark"] {
-    --bg-primary: #1a1a1a;
-    --bg-secondary: #1a1a1a;
-    --text-primary: #ffffff;
-    --text-secondary: #cccccc;
-    --header-bg: #000000;
-    --header-text: #ffffff;
-    --border-color: #ffffff;
-    --accent-color: #ffffff;
-    --accent-hover: #cccccc;
+    --bg-primary: #0f1823;
+    --bg-secondary: #1a2940;
+    --text-primary: #e8e6e1;
+    --text-secondary: #b8b5ae;
+    --header-bg: #0a0f18;
+    --header-text: #e8e6e1;
+    --border-color: #3a5580;
+    --accent-color: #8fa8c4;
+    --accent-hover: #b5cce8;
 }
 
 body {
@@ -52,10 +54,10 @@ main {
 
 /* Header Styling */
 header {
-    background: linear-gradient(135deg, #000000 0%, #1a1a2e 100%);
+    background: linear-gradient(135deg, #1a3a52 0%, #0d1f2d 100%);
     color: var(--header-text);
     padding: 60px 20px;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 3px solid #d4af37;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -68,7 +70,7 @@ header::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 20% 50%, rgba(0, 102, 255, 0.1), transparent 50%);
+    background: radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.05), transparent 50%);
     pointer-events: none;
 }
 
@@ -80,7 +82,7 @@ header h1 {
     position: relative;
     z-index: 1;
     animation: slideDown 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
-    background: linear-gradient(135deg, #fff, #00d4ff);
+    background: linear-gradient(135deg, #d4af37, #e8c547);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -242,15 +244,15 @@ html[data-theme="dark"] .theme-toggle-btn::after {
 
 /* Navigation Styling */
 nav {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(26, 26, 46, 0.95));
+    background: linear-gradient(135deg, rgba(26, 58, 82, 0.98), rgba(13, 31, 45, 0.98));
     padding: 16px 20px;
-    border-bottom: 2px solid rgba(0, 102, 255, 0.3);
+    border-bottom: 3px solid #d4af37;
     margin-bottom: 30px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     padding-right: 40px;
-    box-shadow: 0 8px 32px rgba(0, 102, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(26, 58, 82, 0.25);
     gap: 30px;
     position: relative;
     overflow: hidden;
@@ -263,7 +265,7 @@ nav::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(90deg, transparent, rgba(0, 102, 255, 0.05), transparent);
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.05), transparent);
     pointer-events: none;
 }
 
@@ -284,17 +286,17 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    background: linear-gradient(135deg, #0066ff, #0052cc);
+    background: linear-gradient(135deg, #1a3a52, #0d1f2d);
     color: white;
     padding: 12px 26px;
     border-radius: 8px;
     transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     font-weight: 600;
-    box-shadow: 0 6px 20px rgba(0, 102, 255, 0.35);
+    box-shadow: 0 6px 20px rgba(26, 58, 82, 0.35);
     letter-spacing: 0.5px;
     position: relative;
     overflow: hidden;
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid #d4af37;
 }
 
 nav ul li a::before {
@@ -305,16 +307,17 @@ nav ul li a::before {
     width: 0;
     height: 0;
     border-radius: 50%;
-    background: rgba(0, 212, 255, 0.4);
+    background: rgba(212, 175, 55, 0.4);
     transform: translate(-50%, -50%);
     transition: width 0.6s, height 0.6s;
 }
 
 nav ul li a:hover {
-    background: linear-gradient(135deg, #00d4ff, #0066ff);
+    background: linear-gradient(135deg, #d4af37, #1a3a52);
     transform: translateY(-6px) scale(1.1);
-    box-shadow: 0 12px 40px rgba(0, 212, 255, 0.5);
-    border-color: rgba(0, 212, 255, 0.5);
+    box-shadow: 0 12px 40px rgba(212, 175, 55, 0.4);
+    border-color: #e8c547;
+    color: #1a3a52;
 }
 
 nav ul li a:hover::before {
@@ -545,25 +548,25 @@ html[data-theme="dark"] .toggle-section-btn {
 
 /* Click Counter Display */
 .click-counter {
-    background: linear-gradient(135deg, rgba(0, 102, 255, 0.1), rgba(0, 212, 255, 0.1));
-    color: #0066ff;
+    background: linear-gradient(135deg, rgba(26, 58, 82, 0.1), rgba(212, 175, 55, 0.1));
+    color: #1a3a52;
     padding: 16px 20px;
     border-radius: 8px;
     margin-bottom: 20px;
     text-align: center;
     font-weight: 600;
-    box-shadow: 0 4px 16px rgba(0, 102, 255, 0.15);
+    box-shadow: 0 4px 16px rgba(26, 58, 82, 0.15);
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(0, 102, 255, 0.2);
+    border: 1px solid rgba(212, 175, 55, 0.3);
     animation: fadeInUp 0.6s ease-out 0.5s both;
     letter-spacing: 0.5px;
 }
 
 html[data-theme="dark"] .click-counter {
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 102, 255, 0.1));
-    color: #00d4ff;
-    border-color: rgba(0, 212, 255, 0.2);
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(26, 58, 82, 0.1));
+    color: #d4af37;
+    border-color: rgba(212, 175, 55, 0.4);
 }
 
 .click-counter::before {
@@ -664,16 +667,16 @@ html[data-theme="dark"] .form-group textarea {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #0066ff;
+    border-color: #d4af37;
     background-color: var(--bg-secondary);
-    box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
     transform: translateY(-2px);
 }
 
 html[data-theme="dark"] .form-group input:focus,
 html[data-theme="dark"] .form-group textarea:focus {
-    border-color: #00d4ff;
-    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+    border-color: #e8c547;
+    box-shadow: 0 0 0 3px rgba(232, 197, 71, 0.1);
 }
 
 .form-group textarea {
@@ -682,16 +685,16 @@ html[data-theme="dark"] .form-group textarea:focus {
 }
 
 .submit-btn {
-    background: linear-gradient(135deg, #0066ff, #00d4ff);
+    background: linear-gradient(135deg, #1a3a52, #0d1f2d);
     color: white;
-    border: none;
+    border: 2px solid #d4af37;
     padding: 14px 32px;
     border-radius: 8px;
     font-weight: 600;
     font-size: 1.05em;
     cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 16px rgba(0, 102, 255, 0.3);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 4px 16px rgba(26, 58, 82, 0.3);
     width: 100%;
     letter-spacing: 0.5px;
     position: relative;
@@ -705,13 +708,16 @@ html[data-theme="dark"] .form-group textarea:focus {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(212, 175, 55, 0.2);
     transition: left 0.5s ease;
 }
 
 .submit-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(0, 102, 255, 0.5);
+    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
+    border-color: #e8c547;
+    background: linear-gradient(135deg, #d4af37, #1a3a52);
+    color: #1a3a52;
 }
 
 .submit-btn:hover::before {
