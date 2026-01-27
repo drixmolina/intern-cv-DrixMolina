@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeDarkMode();
     initializeSectionToggle();
     initializeClickCounter();
+    initializeContactForm();
 });
 
 // Feature 1: Welcome Message Alert
@@ -104,6 +105,57 @@ function initializeClickCounter() {
                     this.style.backgroundColor = 'transparent';
                 }, 300);
             });
+        });
+    }
+}
+
+// Feature 5: Contact Form Validation and Handling
+function initializeContactForm() {
+    const contactForm = document.getElementById('contact-form');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            // Basic validation
+            if (!name) {
+                alert('Please enter your name!');
+                return;
+            }
+            if (!email) {
+                alert('Please enter your email!');
+                return;
+            }
+            
+            // Email validation regex
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address!');
+                return;
+            }
+            
+            if (!message) {
+                alert('Please enter a message!');
+                return;
+            }
+            
+            // Success message
+            alert(`Thank you, ${name}! Your message has been received. We'll get back to you at ${email} soon.`);
+            
+            // Log the data (in a real app, this would be sent to a server)
+            console.log({
+                name: name,
+                email: email,
+                message: message,
+                timestamp: new Date().toLocaleString()
+            });
+            
+            // Reset form
+            contactForm.reset();
         });
     }
 }
