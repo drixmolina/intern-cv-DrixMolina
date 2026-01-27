@@ -1,6 +1,4 @@
 # intern-cv-DrixMolina
-# Intern CV - Drix Molina
-
 A professional curriculum vitae (CV) webpage built with semantic HTML5.
 
 ## Overview
@@ -27,6 +25,7 @@ The page uses semantic HTML5 tags including:
 ## Technologies Used
 
 - HTML5 (semantic markup)
+- CSS3 (Box Model, margins, padding, borders)
 - Git & GitHub for version control
 
 ## How to View
