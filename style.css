@@ -4,39 +4,39 @@
 }
 
 html {
-    --bg-primary: #f0f8f4;
+    --bg-primary: #F3F4F4;
     --bg-secondary: #ffffff;
-    --text-primary: #2d5a47;
-    --text-secondary: #AEB877;
-    --header-bg: #A5C89E;
-    --header-text: #ffffff;
-    --border-color: #FFFBB1;
-    --accent-color: #D8E983;
-    --accent-hover: #A5C89E;
-    --accent-light: #D8E98320;
-    --success-color: #A5C89E;
-    --warning-color: #FFFBB1;
+    --text-primary: #061E29;
+    --text-secondary: #1D546D;
+    --header-bg: #1D546D;
+    --header-text: #F3F4F4;
+    --border-color: #5F9598;
+    --accent-color: #5F9598;
+    --accent-hover: #1D546D;
+    --accent-light: #5F959820;
+    --success-color: #1D546D;
+    --warning-color: #5F9598;
     transition: background-color 0.3s ease, color 0.3s ease;
     scroll-behavior: smooth;
 }
 
 html[data-theme="dark"] {
-    --bg-primary: #1a2a1f;
-    --bg-secondary: #2a3a2f;
-    --text-primary: #ffffff;
-    --text-secondary: #D8E983;
-    --header-bg: #1a3a2a;
-    --header-text: #ffffff;
-    --border-color: #FFFBB1;
-    --accent-color: #D8E983;
-    --accent-hover: #A5C89E;
+    --bg-primary: #0a1620;
+    --bg-secondary: #132b3a;
+    --text-primary: #F3F4F4;
+    --text-secondary: #5F9598;
+    --header-bg: #061E29;
+    --header-text: #F3F4F4;
+    --border-color: #5F9598;
+    --accent-color: #5F9598;
+    --accent-hover: #7BA9AC;
 }
 
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.8;
-    background: linear-gradient(135deg, #f0f8f4 0%, #fffbb1 50%, #f0f8f4 100%);
+    background: linear-gradient(135deg, #F3F4F4 0%, #E8EAEB 50%, #F3F4F4 100%);
     color: var(--text-primary);
     letter-spacing: 0.3px;
 }
@@ -54,12 +54,12 @@ main {
 
 /* Header Styling */
 header {
-    background: linear-gradient(135deg, #A5C89E 0%, #D8E983 50%, #AEB877 100%);
+    background: linear-gradient(135deg, #061E29 0%, #1D546D 50%, #5F9598 100%);
     color: var(--header-text);
     padding: 50px 20px;
-    border-bottom: 5px solid #FFFBB1;
+    border-bottom: 5px solid #5F9598;
     text-align: center;
-    box-shadow: 0 8px 32px rgba(165, 200, 158, 0.3);
+    box-shadow: 0 8px 32px rgba(6, 30, 41, 0.3);
     position: relative;
     overflow: hidden;
 }
@@ -71,7 +71,7 @@ header::after {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at top right, rgba(255, 251, 177, 0.2), transparent);
+    background: radial-gradient(circle at top right, rgba(95, 149, 152, 0.15), transparent);
     pointer-events: none;
 }
 
@@ -97,7 +97,7 @@ header h1 {
 header p {
     margin: 0;
     font-size: 1.2em;
-    color: #2d5a47;
+    color: #5F9598;
     animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
@@ -322,13 +322,13 @@ article p {
 
 /* Footer Styling */
 footer {
-    background: linear-gradient(135deg, #A5C89E 0%, #D8E983 50%, #AEB877 100%);
-    color: #ffffff;
+    background: linear-gradient(135deg, #061E29 0%, #1D546D 50%, #5F9598 100%);
+    color: #F3F4F4;
     text-align: center;
     padding: 40px 20px;
     margin-top: 50px;
-    border-top: 5px solid #FFFBB1;
-    box-shadow: 0 -8px 32px rgba(165, 200, 158, 0.25);
+    border-top: 5px solid #5F9598;
+    box-shadow: 0 -8px 32px rgba(6, 30, 41, 0.25);
 }
 
 footer p {
@@ -517,8 +517,8 @@ section:nth-of-type(3) ul li:hover::before {
 }
 
 .submit-btn {
-    background: linear-gradient(135deg, #A5C89E 0%, #D8E983 100%);
-    color: #ffffff;
+    background: linear-gradient(135deg, #1D546D 0%, #5F9598 100%);
+    color: #F3F4F4;
     border: none;
     padding: 14px 32px;
     border-radius: 6px;
@@ -526,14 +526,14 @@ section:nth-of-type(3) ul li:hover::before {
     font-size: 1.05em;
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    box-shadow: 0 4px 12px rgba(165, 200, 158, 0.3);
+    box-shadow: 0 4px 12px rgba(29, 84, 109, 0.3);
     width: 100%;
 }
 
 .submit-btn:hover {
-    background: linear-gradient(135deg, #D8E983 0%, #A5C89E 100%);
+    background: linear-gradient(135deg, #5F9598 0%, #1D546D 100%);
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(165, 200, 158, 0.4);
+    box-shadow: 0 8px 20px rgba(29, 84, 109, 0.4);
 }
 
 .submit-btn:active {
