@@ -68,14 +68,12 @@ header p {
 .theme-toggle-btn {
     background-color: var(--header-bg);
     color: white;
-    border: none;
-    padding: 10px 15px;
+    border: 2px solid var(--accent-color);
+    padding: 10px 20px;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 0.95em;
+    font-size: 1em;
     transition: background-color 0.3s;
-    margin-top: 10px;
-    border: 2px solid var(--accent-color);
 }
 
 .theme-toggle-btn:hover {
