@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Feature 1: Welcome Message Alert
 function showWelcomeMessage() {
-    const userName = "Jilleanne";
+    const userName = "";
     const welcomeMessage = `Welcome to my CV! 👋\n\nHello ${userName}, thanks for visiting my professional portfolio. Feel free to explore my skills, education, and projects.`;
     alert(welcomeMessage);
 }
