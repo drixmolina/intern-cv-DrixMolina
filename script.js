@@ -22,7 +22,6 @@ function initializeDarkMode() {
     // Check for saved theme preference or default to light mode
     const savedTheme = localStorage.getItem('theme') || 'light';
     htmlElement.setAttribute('data-theme', savedTheme);
-    updateThemeButtonText(toggleButton, savedTheme);
     
     toggleButton.addEventListener('click', function() {
         const currentTheme = htmlElement.getAttribute('data-theme');
@@ -30,12 +29,7 @@ function initializeDarkMode() {
         
         htmlElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
-        updateThemeButtonText(toggleButton, newTheme);
     });
-}
-
-function updateThemeButtonText(button, theme) {
-    button.textContent = theme === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode';
 }
 
 // Feature 3: Show/Hide Sections
