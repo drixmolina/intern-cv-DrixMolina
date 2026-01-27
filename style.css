@@ -3,11 +3,37 @@
     box-sizing: border-box;
 }
 
+html {
+    --bg-primary: #f4f4f4;
+    --bg-secondary: white;
+    --text-primary: #333;
+    --text-secondary: #555;
+    --header-bg: #333;
+    --header-text: white;
+    --border-color: #ddd;
+    --accent-color: #0066cc;
+    --accent-hover: #004999;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html[data-theme="dark"] {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --text-primary: #f0f0f0;
+    --text-secondary: #b0b0b0;
+    --header-bg: #1a1a1a;
+    --header-text: #f0f0f0;
+    --border-color: #404040;
+    --accent-color: #66b3ff;
+    --accent-hover: #4da6ff;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
 }
 
 /* Main Container */
@@ -15,15 +41,15 @@ main {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background-color: white;
+    background-color: var(--bg-secondary);
 }
 
 /* Header Styling */
 header {
-    background-color: #333;
-    color: white;
+    background-color: var(--header-bg);
+    color: var(--header-text);
     padding: 30px 20px;
-    border-bottom: 5px solid #0066cc;
+    border-bottom: 5px solid var(--accent-color);
     text-align: center;
 }
 
@@ -35,15 +61,35 @@ header h1 {
 header p {
     margin: 0;
     font-size: 1.2em;
-    color: #bbb;
+    color: var(--text-secondary);
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.95em;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.theme-toggle-btn:hover {
+    background-color: var(--accent-hover);
 }
 
 /* Navigation Styling */
 nav {
-    background-color: #f9f9f9;
+    background-color: var(--bg-secondary);
     padding: 15px 0;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--border-color);
     margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav ul {
@@ -60,7 +106,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    background-color: #0066cc;
+    background-color: var(--accent-color);
     color: white;
     padding: 10px 20px;
     border-radius: 4px;
@@ -68,23 +114,24 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #004999;
+    background-color: var(--accent-hover);
 }
 
 /* Section Styling */
 section {
     margin-bottom: 30px;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--bg-secondary);
 }
 
 section h2 {
     margin-top: 0;
     margin-bottom: 15px;
-    color: #333;
-    border-bottom: 2px solid #0066cc;
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
     padding-bottom: 10px;
 }
 
@@ -92,7 +139,7 @@ section h2 {
 article {
     margin-bottom: 20px;
     padding-bottom: 15px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--border-color);
 }
 
 article:last-child {
@@ -103,22 +150,22 @@ article:last-child {
 
 article h3 {
     margin: 0 0 10px 0;
-    color: #0066cc;
+    color: var(--accent-color);
 }
 
 article p {
     margin: 8px 0;
-    color: #555;
+    color: var(--text-secondary);
 }
 
 /* Footer Styling */
 footer {
-    background-color: #333;
-    color: white;
+    background-color: var(--header-bg);
+    color: var(--header-text);
     text-align: center;
     padding: 20px;
     margin-top: 30px;
-    border-top: 5px solid #0066cc;
+    border-top: 5px solid var(--accent-color);
 }
 
 footer p {
@@ -126,7 +173,7 @@ footer p {
 }
 
 footer a {
-    color: #0066cc;
+    color: var(--accent-color);
     text-decoration: none;
     margin: 0 5px;
 }
@@ -138,4 +185,41 @@ footer a:hover {
 /* Skills List Styling */
 ul li {
     margin: 8px 0;
+}
+
+/* Toggle Section Button */
+.toggle-section-btn {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1em;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: transform 0.3s ease;
+}
+
+.toggle-section-btn:hover {
+    transform: scale(1.2);
+}
+
+/* Section Content Toggle */
+.section-content {
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
+}
+
+/* Click Counter Display */
+.click-counter {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Skills list item hover effect */
+section:nth-of-type(3) ul li {
+    transition: background-color 0.3s ease;
 }
