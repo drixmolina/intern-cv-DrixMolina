@@ -103,8 +103,11 @@ function initializeClickCounter() {
     }
 }
 
-// Feature 5: Contact Form Validation and Handling
+// Feature 5: Contact Form Validation and Email Handling with EmailJS
 function initializeContactForm() {
+    // Initialize EmailJS (replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key)
+    emailjs.init('YOUR_PUBLIC_KEY');
+    
     const contactForm = document.getElementById('contact-form');
     
     if (contactForm) {
@@ -137,19 +140,37 @@ function initializeContactForm() {
                 return;
             }
             
-            // Success message
-            alert(`Thank you, ${name}! Your message has been received. We'll get back to you at ${email} soon.`);
-            
-            // Log the data (in a real app, this would be sent to a server)
-            console.log({
-                name: name,
-                email: email,
+            // Send email using EmailJS
+            const templateParams = {
+                from_name: name,
+                from_email: email,
                 message: message,
-                timestamp: new Date().toLocaleString()
-            });
+                to_email: 'YOUR_EMAIL@example.com' // Replace with your actual email
+            };
             
-            // Reset form
-            contactForm.reset();
+            // Show loading state
+            const submitBtn = contactForm.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+                .then(function(response) {
+                    console.log('Email sent successfully!', response.status, response.text);
+                    alert(`Thank you, ${name}! Your message has been sent successfully. We'll get back to you at ${email} soon.`);
+                    contactForm.reset();
+                    
+                    // Reset button
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }, function(error) {
+                    console.error('Failed to send email:', error);
+                    alert('Error sending message. Please try again or contact us directly.');
+                    
+                    // Reset button
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                });
         });
     }
 }
